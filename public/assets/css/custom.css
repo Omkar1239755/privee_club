@@ -1,0 +1,285 @@
+
+
+/* .form-control{
+	font-weight: 500;
+    color: #222;
+} */
+
+
+.eye-icon {
+    float: inline-end !important;
+}
+
+h6.forgot_sec{
+	margin-bottom: 0;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+h6.forgot_sec a{
+	text-decoration: none;
+	color: #333;
+}
+
+.col-form-alert-label{
+    color: #ff0000;
+}
+
+.has-danger .form-control {
+    border-color: #ff0000
+}
+
+.has-danger .col-form-label {
+    color: #e74c3c;
+
+}
+
+/*{
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}*/
+
+.content-header h1 {
+    font-size: 26px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.table-bordered thead th{
+	background: #cf195a;
+	color: #fff;
+	text-align:center;
+}
+
+.table-bordered td a{
+	margin: 0px 5px;
+}
+
+.nofloat{
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    float: none;
+}
+
+table.dataTable td{
+    vertical-align: middle;
+}
+
+.card-title{
+    font-weight: 600;
+}
+
+.table td, .table th{
+    vertical-align: middle;
+}
+
+.profile_pic {
+    width: 100%;
+    background: none;
+    width: 220px;
+    height: 220px;
+    display: block;
+    margin: auto;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile_pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #007bff;
+    padding: 3px;
+}
+
+/* .form-control {
+    color: #222;
+    height: auto;
+    padding: 10px 15px;
+    font-weight: 500;
+    font-size: 16px;
+} */
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.bg_transparent{
+    background-color: transparent;
+}
+
+#imgInp {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.card-title{
+    float: none;
+}
+
+.card-header i.fa-pencil{
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+div.dataTables_wrapper div.dataTables_filter label{
+    text-align: right;
+}
+
+td select{
+    max-width: 150px;
+    display: block;
+    margin: auto;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active{
+     background-color: #cf195a;
+     color: #fff !important;
+}
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link:hover, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link:hover{
+     background-color: #cf195a;
+     color: #fff !important;
+}
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:hover {
+     background-color: #cf195a !important;
+    color: #fff !important;
+} 
+[class*=sidebar-dark-] .sidebar a {
+    color: #000 !important;
+}
+[class*=sidebar-dark-] {
+    background-color: #fff !important;
+    color: #fff !important;
+}
+[class*=sidebar-dark] .brand-link {
+    border-bottom: 1px solid #e5e5e5;
+}
+.main-sidebar img {
+    width: 100% !important;
+    display: block;
+    margin: auto;
+}
+.btn-primary { 
+    background-color: #cf195a !important;
+    border-color: #cf195a !important; 
+}
+.page-item.active .page-link { 
+    background-color: #cf195a;
+    border-color: #cf195a;
+}
+table td a, .breadcrumb-item a {
+    color: #cf195a !important;
+}
+table.dataTable td { 
+    text-align: center;
+}
+img.user-img.img-css {
+    object-fit: cover;
+}
+i.fas.fa-toggle-on, i.fas.fa-toggle-off {
+    font-size: 28px;
+    color: #cf195a !important;
+}
+.select2-container .select2-selection--single { 
+    height: 35px !important; 
+}
+button.btn.btn-sm.btn-primary.mt-2 {
+    margin-top: 0px !important;
+}
+.login-page, .register-page {
+    /* background: url('https://work.mobidudes.in/SK/dispobooking/public/uploads/banner/1732598646_67455b761cb54.jpg'); */
+    background: #cf195a14;
+    width: 100%;
+    /* height: 100%; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+/*style="background: url('{{ asset('public/web/assets/images/login-img.png') }}') no-repeat center center; background-size: cover;"*/
+
+.login-box {
+    width: 1200px !important;
+    height: 600px;
+    background: #fff;
+    border-radius: 0px;
+    box-shadow: 4px 4px 20.9px 9px #DDDCEB40;
+}
+.login-img img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius:  0px;
+    /* opacity: 0.5; */
+    filter: brightness(0.9);
+}
+.login-box .card {
+    box-shadow: none;
+    border: none;
+}
+.login-box .card .card-header {
+    border-bottom: none;
+    background:transparent;
+}
+.login-box .form-control {
+    width: 343px !important;
+    height: 50px;
+    padding: 10px 17px 10px 17px;
+    gap: 12px;
+    /* border-radius: 12px 0px 0px 12px !important; */
+    border-radius: 12px 12px 12px 12px !important;
+    border: 1px solid #DBE4F7 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.icheck-primary>input:first-child:checked+input[type=hidden]+label::before, .icheck-primary>input:first-child:checked+label::before {
+    background-color: #cf195a;
+    border-color: #cf195a;
+}
+.icheck-primary>input:first-child:not(:checked):not(:disabled):hover+input[type=hidden]+label::before, .icheck-primary>input:first-child:not(:checked):not(:disabled):hover+label::before {
+    border-color: #cf195a;
+}
+img.animation__shake {
+    width: 150px;
+}
+
+@media screen and (min-width:300px) and (max-width:767px){
+    
+    #users_wrapper .col-sm-12, #broker_wrapper .col-sm-12, #other_wrapper .col-sm-12, #surveyor_wrapper .col-sm-12, #surveys_wrapper .col-sm-12, #example2_wrapper .col-sm-12, #categories_wrapper .col-sm-12{
+        overflow:auto;
+    }
+    .user-tabs li{width:100%;margin-bottom:10px;}
+    .user-tabs li a{text-align:center;}
+    #users_filter{text-align:left;float:left;}
+}
+
+
+
+
+
+
+
