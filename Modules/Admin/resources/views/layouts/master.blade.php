@@ -29,7 +29,7 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-        <div class="preloader flex-column justify-content-center align-items-center"> <img class="animation__shake" src="{{ asset('public/web/assets/images/svg-images/logo-icon.png')}}" alt="Annuenr Logo" width="5%"> </div>
+        <!-- <div class="preloader flex-column justify-content-center align-items-center"> <img class="animation__shake" src="{{ asset('public/web/assets/images/svg-images/logo-icon.png')}}" alt="Annuenr Logo" width="5%"> </div> -->
 
         <!-- header code here -->
         @include('admin::layouts.header')

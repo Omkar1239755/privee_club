@@ -20,7 +20,7 @@
                 </li> 
                
                  <li class="nav-item">
-                    <a href="#" class="nav-link {{ Request::is('admin/users') ? 'active' : '' }}"> <i class="fa-solid fa-users"></i>
+                    <a href="{{route('admin.catgeories')}}" class="nav-link {{ Request::is('admin/catgeory') ? 'active' : '' }}"> <i class="fa-solid fa-users"></i>
                         &nbsp;<p> Category </p>
                     </a>
                 </li> 
