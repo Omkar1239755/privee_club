@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use Hash;
-use  App\Models\{User};
+use Auth;
+use  App\Models\{User,DeviceInfo};
 
 class AuthController extends Controller
 {
@@ -52,7 +53,7 @@ class AuthController extends Controller
                 $user->password  = Hash::make($request->password);
                 $user->save();
                 $user->refresh();
-                return response()->json(['status'=>true,'message'=>'registration succesfully','data'=>$user],200);
+                return response()->json(['status'=>true,'status_code' => 200,'message'=>'registration succesfully','data'=>$user],200);
         }
       } catch (\Throwable $e) {
          return response()->json(['status'=>false,'message'=>$e->getMessage()],422);
@@ -72,31 +73,53 @@ class AuthController extends Controller
             if ($validator->fails()) {
                 return response()->json(['status' => false, 'message' => $validator->errors()->first()], 422);
             }
-
-                if(Auth::attempt(['email' => $email, 'password' => $password])){
-
-
-
-
-
-
-                    
+                if(Auth::attempt(['email' => $request->email, 'password' =>  $request->password])){
+                  $user = Auth::user();
+                  $token  = $user->createToken('prive')->plainTextToken;
+                  $user['token'] =$token;
+               
+                  //genrate fcm token 
+                  $fcmToken = new DeviceInfo;
+                  $fcmToken->user_id   = $user->id;
+                  $fcmToken->fcm_token = $token;
+                  $fcmToken->device_id = $request->device_id;
+                  $fcmToken->device_type = $request->device_type;
+                  $fcmToken->save();
+                  
+                  return response()->json(['status' => true, 'status_code' => 200, 'message' => 'Login Successfull!', 'data' => $user], 200);
                     }
                 else{
-                   return  response()->jscon([
+                   return  response()->json([
+                     'status_code'=>401,
                      'status'=>false,
                      'messsage'=>'Invallid credentials',
 
                    ]);
-                }
-
-
-
-
+            }
 
     }
 
 
+// ***************************************************************logout ********************************************************************************
 
+public function logout(request $request){
+
+       try{
+              $validated = $request->validate([
+                  'device_id' => 'required',
+              ]);
+              
+              if(auth()->user()){
+                    $device = DeviceInfo::where('user_id', auth()->user()->id)->where('device_id', $request->device_id)->delete();
+                    auth()->user()->tokens()->delete();
+                   return response()->json(['status' => true, 'message' => 'logout successfully']);
+              }else{
+                  $error_message = 'failed to logout';
+                  return response()->json(['status' => false, 'message' => $error_message]);
+              }            
+       }catch(\Exception $e){
+              return response()->json(['status' => false, 'message' => $e->getMessage()]);
+          }
+      }
 
 }
