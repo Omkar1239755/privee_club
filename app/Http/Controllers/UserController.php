@@ -5,66 +5,70 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Validator;
-use  App\Models\{User,HearAboutUs};
+use  App\Models\{User,HearAboutUs,LookngFor,UserImage};
 class UserController extends Controller
 {
     
-// ***********************************************verification image for user ************************************************************************************
-public function verificationImage(request $request){
-    try{
+// ***********************************************selfie  image for user ************************************************************************************
+    public function profileImage(request $request){
+        try{
 
-        $rule =[
-        'verify_image'=>'required'  
-        ];
+             $rule =[
+                'profile_image'=>'required'  
+                ];
 
-        $validator = Validator::make($request->all(),$rule);
-            if ($validator->fails()) {
-            return response()->json(['status' => false, 'message' => $validator->errors()->first()], 422);
-            }
-        
-        $user = Auth::user();
+                $validator = Validator::make($request->all(),$rule);
+                if ($validator->fails()) {
+                return response()->json(['status' => false, 'message' => $validator->errors()->first()], 422);
+                }
+            
+             $user = Auth::user();
 
-            if($request->has('verify_image')){
-            $image = $request->verify_image;
-            $name  = time().'.'.$image->getClientOriginalExtension();
-            $path = public_path('uploads/users/');
-            $image->move($path,$name);
-            $user->verification_image = 'public/uploads/users/'.$name;
-            $user->save();     
-            };
-        return response()->json(['status' => true, 'status_code' => 200, 'message' => "verification image uploded succesfully", 'data' => $user], 200);
+             if($request->has('profile_image')){
+                $image = $request->profile_image;
+                $name  = time().'.'.$image->getClientOriginalExtension();
+                $path = public_path('uploads/users/');
+                $image->move($path,$name);
+                $user->verification_image = 'public/uploads/users/'.$name;
+                $user->save();     
+                };
+            return response()->json(['status' => true, 'status_code' => 200, 'message' => "profile image uploded succesfully", 'data' => $user], 200);
 
-        }catch (\Exception $e) {
-                return response()->json(['status' => false, 'message' => $e->getMessage()], 422);
-            }
+            }catch (\Exception $e) {
+                    return response()->json(['status' => false, 'message' => $e->getMessage()], 422);
+                }
+                
     }
 
-// ***********************************************************profile image *************************************************************************
+// ***********************************************************USER Image *************************************************************************
 
-public function profileImage(){
+public function userImage(request $request){
 
   try{
 
         $rule =[
-        'profile_image'=>'required'
+        'user_image'=>'required'
         ];
-  
-       $validator = Validator::make($request->all(),$rule);
+
+        $validator = Validator::make($request->all(),$rule);
         if ($validator->fails()) {
                 return response()->json(['status' => false, 'message' => $validator->errors()->first()], 422);
             }
 
         $user = Auth::user();
+       
+        $savedImage = [];
+        
+        foreach($request->file('user_image') as $images){
 
-        if($request->has('profile_image')){
-        $image = $request->profile_image;
-        $name  = time().'.'.$image->getClientOriginalExtension();
-        $path = public_path('uploads/profile_image/');
-        $image->move($path,$name);
-        $user->verification_image = 'public/uploads/profile_image/'.$name;
-        $user->save();     
+            $path = $images->store('user_images','public');
+            $savedImage [] =  UserImage::create([
+            'user_id'=> $user->id,
+            'profile_image'=>$path
+            ]);
         };
-       return response()->json(['status' => true, 'status_code' => 200, 'message' => "Profile image uploded succesfully", 'data' => $user], 200);
+
+       return response()->json(['status' => true, 'status_code' => 200, 'message' => "User image uploded succesfully", 'data' => $savedImage], 200);
 
 
     }catch(\Exception $e){
@@ -75,7 +79,6 @@ public function profileImage(){
 
 
 // ******************************************************additional detail ****************************************************************************
-
 public function additionalDetail(request $request){
 
 try{
@@ -188,8 +191,8 @@ try{
 
 }
 
-// *********************************************************api to  get hear abt us ********************************************************************
 
+// *********************************************************api to  get hear abt us ********************************************************************
 
 public function hearAboutUsListing(){
     $data = HearAboutUs::get();
@@ -202,7 +205,6 @@ public function hearAboutUsListing(){
 }
 
 // *****************************************************store hear abt us *************************************************************************
-
 public function hearAboutUS(request $request){
   try{
         $rule = [
@@ -234,7 +236,49 @@ public function hearAboutUS(request $request){
     }
 
 }
+// ******************************************************************* get lookingFor *********************************************************************
+public function getLookingFor(){
+    $data = LookngFor::get();
+    return response()->json([
+            "status_code"=>200,
+            "status" => true,
+            "message" => " LookngFor  detail retrive successfully",
+            "data" => $data
+        ], 200); 
 
+}
+
+// ************************************************************************store looking for ********************************************************
+
+public function lookingFor(request $request){
+
+    try{
+            $request->validate([
+                'looking_for_ids' => 'required', 
+            ]);
+
+            $user = Auth::User();
+            $ids = $request->looking_for_ids;  
+            // converting into string and save
+            $user->looking_for = implode(',',$ids);
+            $user->save();
+
+        return response()->json([
+                        "status_code"=>200,
+                        "status" => true,
+                        "message" => " Data save successfully",
+                        "data" => $user
+                    ], 200); 
+        }catch(\Exception $e){
+                return response()->json([
+                        "status" => false,
+                        "message" => $e->getMessage()
+                    ], 500);
+            }
+
+
+
+}
 
 
 

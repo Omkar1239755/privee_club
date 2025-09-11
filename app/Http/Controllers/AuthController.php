@@ -63,7 +63,6 @@ class AuthController extends Controller
     }
 // ****************************************************Login*************************************************************************************
     public function Login(request $request){
-
          $rules = [
          'email'=>'required',
          'password'=>'required'
