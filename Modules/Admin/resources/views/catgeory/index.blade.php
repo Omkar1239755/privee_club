@@ -24,17 +24,21 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header d-flex align-items-center">
-                            <h3 class="card-title nofloat">
+                        <!--<div class="card-header d-flex align-items-center">-->
+                        <!--    <h3 class="card-title nofloat">-->
                            
-                            </h3>
-                        </div>
+                        <!--    </h3>-->
+                        <!--</div>-->
 
-                        <div class="card-header d-flex align-items-center justify-content-between">
-                            <h3 class="card-title">Category List</h3>
-                            <a href="{{route('admin.add')}}" class="btn btn-primary">
-                                <i class="fa fa-plus"></i> Add Category
-                            </a>
+                        <div class="card-header ">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h3 class="card-title">Category List</h3>
+                                <div>
+                                <a href="{{route('admin.add')}}" class="btn btn-primary">
+                                    <i class="fa fa-plus"></i> Add Category
+                                </a>
+                                </div>
+                            </div>
                         </div>
 
 
@@ -51,7 +55,7 @@
                                 </div>
                             @endif
                             
-                            <table id="categories" class="table table-bordered table-hover">
+                            <table id="categories" class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>S.No.</th>

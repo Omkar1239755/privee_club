@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2 align-items-center">
                     <div class="col-sm-6">
-                        <h1 class="m-0" style="color:#cf195a;">
+                        <h1 class="m-0">
                             <i class="fas fa-folder-plus mr-2"></i> Add Category
                         </h1>
                     </div>
@@ -28,7 +28,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 col-12">
                         <div class="card shadow-sm border-0">
-                            <div class="card-header text-white" style="background-color:#cf195a;">
+                            <div class="card-header" style="background-color:#FFD0E7; color: #0E0F0F;">
                                 <h3 class="card-title">
                                     <i class="fas fa-plus-circle mr-2"></i> Add New Category
                                 </h3>
@@ -40,7 +40,7 @@
                                         <label for="category_name">Category Name</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" style="background-color:#cf195a; color:#fff;">
+                                                <span class="input-group-text" style="background-color:#FFD0E7; color:#0E0F0F;">
                                                     <i class="fas fa-tag"></i>
                                                 </span>
                                             </div>
@@ -48,10 +48,10 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between">
-                                        <a href="{{ route('admin.catgeories') }}" class="btn" style="background-color:#6c757d; color:#fff;">
+                                        <a href="{{ route('admin.catgeories') }}" class="btn" style="background-color:#0E0F0F; color:#fff;">
                                             <i class="fas fa-arrow-left"></i> Back
                                         </a>
-                                        <button type="submit" class="btn" style="background-color:#cf195a; color:#fff;">
+                                        <button type="submit" class="btn" style="background-color:#FFD0E7; color:#0E0F0F;">
                                             <i class="fas fa-check-circle"></i> Submit
                                         </button>
                                     </div>

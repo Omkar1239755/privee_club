@@ -42,17 +42,20 @@ h6.forgot_sec a{
 }*/
 
 .content-header h1 {
-    font-size: 26px;
+    font-size: 21px;
     margin: 0;
-    font-weight: 700;
+    font-weight: 500;
 }
 
-.table-bordered thead th{
-	background: #cf195a;
-	color: #fff;
-	text-align:center;
+.table thead th {
+    background: #FFD0E7;
+    color: #0E0F0F;
+    text-align: left;
+    font-weight: 400;
 }
-
+.table thead th {
+    border-bottom: 0px;
+}
 .table-bordered td a{
 	margin: 0px 5px;
 }
@@ -156,16 +159,30 @@ td select{
     margin: auto;
 }
 
-.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active{
-     background-color: #cf195a;
-     color: #fff !important;
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #FFD0E7;
+    color: #0E0F0F !important;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0%), 0 1px 2px rgba(0, 0, 0, .24);
 }
 .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link:hover, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link:hover{
-     background-color: #cf195a;
-     color: #fff !important;
+     background-color: #FFD0E7;
+     color: #0E0F0F !important;
+}
+.bg_info_pink {
+    background: #ffd0e7;
+}
+.bg_info_pink i {
+    color: #0E0F0F;
+    font-size: 20px;
+}
+.left_sidebar_img img {
+    max-width: 100%;
+    max-height: 50px !important;
+    margin: 0px !important;
+    padding: 0px 20px;
 }
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:hover {
-     background-color: #cf195a !important;
+     background-color: #FFD0E7 !important;
     color: #fff !important;
 } 
 [class*=sidebar-dark-] .sidebar a {
@@ -183,16 +200,20 @@ td select{
     display: block;
     margin: auto;
 }
-.btn-primary { 
-    background-color: #cf195a !important;
-    border-color: #cf195a !important; 
+.btn-primary {
+    background-color: #FFD0E7 !important;
+    border-color: #FFD0E7 !important;
+    color: #0E0F0F;
+}
+.btn-primary:hover {
+    color: #0E0F0F;
 }
 .page-item.active .page-link { 
-    background-color: #cf195a;
-    border-color: #cf195a;
+    background-color: #FFD0E7;
+    border-color: #FFD0E7;
 }
 table td a, .breadcrumb-item a {
-    color: #cf195a !important;
+    color: #f377b3 !important;
 }
 table.dataTable td { 
     text-align: center;
@@ -202,7 +223,7 @@ img.user-img.img-css {
 }
 i.fas.fa-toggle-on, i.fas.fa-toggle-off {
     font-size: 28px;
-    color: #cf195a !important;
+    color: #FFD0E7 !important;
 }
 .select2-container .select2-selection--single { 
     height: 35px !important; 
@@ -212,7 +233,7 @@ button.btn.btn-sm.btn-primary.mt-2 {
 }
 .login-page, .register-page {
     /* background: url('https://work.mobidudes.in/SK/dispobooking/public/uploads/banner/1732598646_67455b761cb54.jpg'); */
-    background: #cf195a14;
+    background: #FFD0E714;
     width: 100%;
     /* height: 100%; */
     background-size: cover;
@@ -257,16 +278,21 @@ button.btn.btn-sm.btn-primary.mt-2 {
     box-shadow: none !important;
 }
 .icheck-primary>input:first-child:checked+input[type=hidden]+label::before, .icheck-primary>input:first-child:checked+label::before {
-    background-color: #cf195a;
-    border-color: #cf195a;
+    background-color: #FFD0E7;
+    border-color: #FFD0E7;
 }
 .icheck-primary>input:first-child:not(:checked):not(:disabled):hover+input[type=hidden]+label::before, .icheck-primary>input:first-child:not(:checked):not(:disabled):hover+label::before {
-    border-color: #cf195a;
+    border-color: #FFD0E7;
 }
 img.animation__shake {
     width: 150px;
 }
-
+.card-primary:not(.card-outline)>.card-header {
+    background-color: #FFD0E7;
+}
+.card-title {
+    color: #000;
+}
 @media screen and (min-width:300px) and (max-width:767px){
     
     #users_wrapper .col-sm-12, #broker_wrapper .col-sm-12, #other_wrapper .col-sm-12, #surveyor_wrapper .col-sm-12, #surveys_wrapper .col-sm-12, #example2_wrapper .col-sm-12, #categories_wrapper .col-sm-12{

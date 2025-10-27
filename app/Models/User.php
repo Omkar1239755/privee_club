@@ -26,6 +26,7 @@ class User extends Authenticatable
         'email',
         'password',
         'dob',
+        'profie_rating_status',
         'height',
         'weight',
         'body_type',
@@ -52,27 +53,37 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserImage::class, 'user_id', 'id');
     }
+    
+    public function receivedRatings(){
+        
+        return $this->hasMany(UserRate::class, 'reciever_id');
+        
+    }
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
+   public function intrest(){
+        
+        return $this->hasOne(UserIntrest::class, 'user_id','id');
+        
+    }
+    
+    
+    
+
+
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+
+
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'admin_status'=>'boolean'
         ];
     }
 }

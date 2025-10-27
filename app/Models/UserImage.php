@@ -10,8 +10,4 @@ class UserImage extends Model
   protected $guarded;
 
 
-public function UserImage(){
-  return $this->belongsTo(User::class);
- }
-
 }

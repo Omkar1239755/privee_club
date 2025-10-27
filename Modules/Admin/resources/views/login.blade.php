@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url('public/assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('public/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- AdminLTE CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/adminlte.min2167.css?v=3.2.0') }}">
+    <link rel="stylesheet" href="{{ url('public/assets/css/adminlte.min2167.css?v=3.2.0') }}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ url('public/assets/css/custom.css') }}">
 </head>
 
 <body class="hold-transition login-page">
@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-header text-center">
                         <a href="{{ route('admin.login') }}" style="font-weight: 600; font-size: 26px;" class="h1">
-                            <img src="{{ asset('web/assets/images/logo-icon.png') }}" class="brand-image img-circle" alt="Logo" width="90px">
+                            <img src="{{ url('public/assets/images/Frame.png') }}" class="brand-image " alt="Logo" width="60%">
                         </a>
                     </div>
 
@@ -80,7 +80,7 @@
             <!-- Right Image -->
             <div class="col-md-6 d-none d-md-block">
                 <div class="login-img">
-                    <img src="{{ asset('assets/images/login-img2.jpg') }}" class="img-fluid">
+                    <img src="{{ url('public/assets/images/Rectangle 2617.png') }}" class="img-fluid">
                 </div>
             </div>
 
@@ -88,11 +88,11 @@
     </div>
 
     <!-- jQuery -->
-    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url('public/assets/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('public/assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
-    <script src="{{ asset('assets/js/adminlte.min2167.js?v=3.2.0') }}"></script>
+    <script src="{{ url('assets/js/adminlte.min2167.js?v=3.2.0') }}"></script>
 
     <script>
         $(document).ready(function () {
